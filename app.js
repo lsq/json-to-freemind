@@ -32,7 +32,13 @@ function convert(json, jsonFileName) {
     for (let p = 0; p < keys.length; p++) {
 
       const key = keys[p];
-      let value = values[p];
+      let value = values[p] ?? {};
+	  
+	  //if (value === null){
+		  //debugger;
+		  //value = value ?? {}
+		  //console.log(key);
+	  //}
 
       const isLastChild = typeof value != 'object';
       const isParent = !isLastChild;
@@ -53,8 +59,12 @@ function convert(json, jsonFileName) {
             parentEl.appendChild(childEl);
             lastParentEl.appendChild(parentEl);
           } else {
+			// debugger;
             lastParentEl.appendChild(parentEl);
-            recur(Object.keys(v), Object.values(v), runNumber + 1, parentEl)
+			/* if (value == null || ){
+				console.log(Object.values(v));
+			} */
+            recur(Object.keys(v)||{}, Object.values(v) || {}, runNumber + 1, parentEl)
           }
         })
         continue;
