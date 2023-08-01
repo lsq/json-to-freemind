@@ -15,6 +15,7 @@ function convert(json, jsonFileName) {
   let parsedJson;
   try { parsedJson = JSON.parse(json); }
   catch (err) { throw ('Error: invalid json'); }
+  debugger;
   const jsonKeys = Object.keys(parsedJson);
   const jsonValues = Object.values(parsedJson);
   const parser = new DOMParser();
@@ -52,22 +53,38 @@ function convert(json, jsonFileName) {
       }
 
       if (Array.isArray(value)) {
-        value.forEach((v) => {
-          if (typeof v != 'object') {
-            const childEl = xmlDoc.createElement('node');
-            childEl.setAttribute('TEXT', v);
-            parentEl.appendChild(childEl);
-            lastParentEl.appendChild(parentEl);
-          } else {
-			// debugger;
-            lastParentEl.appendChild(parentEl);
-			/* if (value == null || ){
-				console.log(Object.values(v));
-			} */
-            recur(Object.keys(v)||{}, Object.values(v) || {}, runNumber + 1, parentEl)
-          }
-        })
-        continue;
+		if (value.length > 0) {
+						
+			value.forEach((v, index) => {
+			  debugger;
+			  const ArraychildEl = xmlDoc.createElement('node');
+			  ArraychildEl.setAttribute('TEXT', index);
+			  //parentEl.appendChild(ArraychildEl);
+			  //lastParentEl.appendChild(parentEl);
+			  if (typeof v != 'object') {
+				const childEl = xmlDoc.createElement('node');
+				childEl.setAttribute('TEXT', v);
+				ArraychildEl.appendChild(childEl);
+				parentEl.appendChild(ArraychildEl);
+				lastParentEl.appendChild(parentEl);
+			  } else {
+				debugger;
+				parentEl.appendChild(ArraychildEl);
+				lastParentEl.appendChild(parentEl);
+				/* if (value == null || ){
+					console.log(Object.values(v));
+				} */
+				recur(Object.keys(v)||{}, Object.values(v) || {}, runNumber + 1, ArraychildEl)
+			  }
+			})
+			continue;
+		} else {
+			//const childEl = xmlDoc.createElement('node');
+			//childEl.setAttribute('TEXT', "");
+			//parentEl.appendChild(childEl);
+			lastParentEl.appendChild(parentEl);
+			continue;
+		}
       }
 
       if (isLastChild) {
