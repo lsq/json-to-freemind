@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<map version="1.0.1">
+  <!-- This file was generated from a JSON structure, using json-to-freemind. -->
+  <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+  <node TEXT="package.json">
+    <node TEXT="name">
+      <node TEXT="json-to-freemind"/>
+    </node>
+    <node TEXT="version">
+      <node TEXT="1.0.3"/>
+    </node>
+    <node TEXT="description">
+      <node TEXT="convert json to mindmap"/>
+    </node>
+    <node TEXT="main">
+      <node TEXT="app.js"/>
+    </node>
+    <node TEXT="author">
+      <node TEXT="Alexander Sadovsky"/>
+    </node>
+    <node TEXT="license">
+      <node TEXT="MIT"/>
+    </node>
+    <node TEXT="repository">
+      <node TEXT="type">
+        <node TEXT="git"/>
+      </node>
+      <node TEXT="url">
+        <node TEXT="https://github.com/Alino/json-to-freemind"/>
+      </node>
+    </node>
+    <node TEXT="keywords">
+      <node TEXT="json"/>
+      <node TEXT="freemind"/>
+      <node TEXT="convert"/>
+      <node TEXT="mindmap"/>
+      <node TEXT="cli"/>
+      <node TEXT="documentation"/>
+    </node>
+    <node TEXT="bin">
+      <node TEXT="json-to-freemind">
+        <node TEXT="./cli.js"/>
+      </node>
+    </node>
+    <node TEXT="scripts">
+      <node TEXT="test">
+        <node TEXT="mocha ./test/*.test.js"/>
+      </node>
+    </node>
+    <node TEXT="dependencies">
+      <node TEXT="xmldom">
+        <node TEXT="^0.6.0"/>
+      </node>
+    </node>
+    <node TEXT="devDependencies">
+      <node TEXT="chai">
+        <node TEXT="^4.1.2"/>
+      </node>
+      <node TEXT="chai-xml">
+        <node TEXT="^0.3.2"/>
+      </node>
+      <node TEXT="mocha">
+        <node TEXT="^5.2.0"/>
+      </node>
+    </node>
+  </node>
+</map>

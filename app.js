@@ -15,7 +15,7 @@ function convert(json, jsonFileName) {
   let parsedJson;
   try { parsedJson = JSON.parse(json); }
   catch (err) { throw ('Error: invalid json'); }
-  debugger;
+  //debugger;
   const jsonKeys = Object.keys(parsedJson);
   const jsonValues = Object.values(parsedJson);
   const parser = new DOMParser();
@@ -56,7 +56,7 @@ function convert(json, jsonFileName) {
 		if (value.length > 0) {
 						
 			value.forEach((v, index) => {
-			  debugger;
+			  //debugger;
 			  const ArraychildEl = xmlDoc.createElement('node');
 			  ArraychildEl.setAttribute('TEXT', index);
 			  //parentEl.appendChild(ArraychildEl);
@@ -68,7 +68,7 @@ function convert(json, jsonFileName) {
 				parentEl.appendChild(ArraychildEl);
 				lastParentEl.appendChild(parentEl);
 			  } else {
-				debugger;
+				//debugger;
 				parentEl.appendChild(ArraychildEl);
 				lastParentEl.appendChild(parentEl);
 				/* if (value == null || ){
