@@ -76,15 +76,14 @@ function convert(json, jsonFileName) {
 				} */
 				recur(Object.keys(v)||{}, Object.values(v) || {}, runNumber + 1, ArraychildEl)
 			  }
-			})
-			continue;
+			})			
 		} else {
 			//const childEl = xmlDoc.createElement('node');
 			//childEl.setAttribute('TEXT', "");
 			//parentEl.appendChild(childEl);
-			lastParentEl.appendChild(parentEl);
-			continue;
+			lastParentEl.appendChild(parentEl);			
 		}
+		continue;
       }
 
       if (isLastChild) {
